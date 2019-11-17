@@ -13,14 +13,15 @@ type Sqare struct {
 	a     uint
 }
 
-func (p Sqare) End() (int, int) {
-	x := p.start.x + int(p.a)
-	y := p.start.y + int(p.a)
-	return x, y
+func (p Sqare) End() Point {
+	var point Point
+	point.x = p.start.x + int(p.a)
+	point.y = p.start.y + int(p.a)
+	return point
 }
 
 func (p Sqare) Perimeter() uint {
-	return p.a * 4 
+	return p.a * 4
 }
 
 func (p Sqare) Area() uint {
