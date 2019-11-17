@@ -20,13 +20,11 @@ func (p Sqare) End() (int, int) {
 }
 
 func (p Sqare) Perimeter() uint {
-	perimeter := p.a * 4
-	return perimeter
+	return p.a * 4 
 }
 
 func (p Sqare) Area() uint {
-	area := p.a * p.a
-	return area
+	return p.a * p.a
 }
 
 func main() {
