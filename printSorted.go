@@ -6,10 +6,7 @@ import (
 )
 
 func printSorted(dict map[int]string) {
-	if dict == nil || len(dict) == 0 {
-		panic("wrong argument")
-	}
-	keys := make([]int, 0)
+	keys := make([]int, 0, len(dict))
 	for k := range dict {
 		keys = append(keys, k)
 	}
@@ -25,4 +22,8 @@ func main() {
 	printSorted(testMap)
 	testMap = map[int]string{10: "aa", 0: "bb", 500: "cc"}
 	printSorted(testMap)
+	testMap = map[int]string{}
+	printSorted(testMap)
+	var nilMap map[int]string
+	printSorted(nilMap)
 }
