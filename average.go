@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func average(arr [6]int) float64 {
+func average(arr []int) float64 {
 	var summ int
 	var avg float64
 	for i := 0; i < len(arr); i++ {
@@ -15,6 +15,6 @@ func average(arr [6]int) float64 {
 }
 
 func main() {
-	fmt.Println(average([6]int{1, 2, 3, 4, 5, 6}))
-	fmt.Println(average([6]int{2, 5, -3, 6, 1, 4}))
+	fmt.Println(average([]int{1, 2, 3, 4, 5, 6}))
+	fmt.Println(average([]int{2, 5, -3, 6, 1, 4}))
 }
