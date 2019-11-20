@@ -1,13 +1,14 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"unicode/utf8"
 )
 
-func max(arr []string) string {
-	if arr == nil || len(arr) == 0 {
-		panic("wrong argument")
+func max(arr []string) (string, error) {
+	if len(arr) == 0 {
+		return "", errors.New("Invalid argument exception")
 	}
 	maxStr := arr[0]
 	for i := 1; i < len(arr); i++ {
@@ -15,12 +16,23 @@ func max(arr []string) string {
 			maxStr = arr[i]
 		}
 	}
-	return maxStr
+	return maxStr, nil
+}
+
+func printStr(arr []string) {
+	resultStr, err := max(arr)
+	if err != nil {
+		fmt.Println("Error:", err.Error())
+	} else {
+		fmt.Println(resultStr)
+	}
 }
 
 func main() {
 	testStrings := []string{"one", "two", "three"}
-	fmt.Println(max(testStrings))
+	printStr(testStrings)
 	testStrings = []string{"one", "two"}
-	fmt.Println(max(testStrings))
+	printStr(testStrings)
+	testStrings = []string{}
+	printStr(testStrings)
 }
