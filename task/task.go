@@ -44,10 +44,8 @@ func (p People) Less(i, j int) bool {
 			return true
 		}
 		return false
-	} else if p[i].BirthDay.After(p[j].BirthDay) {
-		return true
 	}
-	return false
+        return p[i].BirthDay.After(p[j].BirthDay)
 }
 
 func (p People) Swap(i, j int) {
