@@ -1,0 +1,6 @@
+goos: linux
+goarch: amd64
+BenchmarkMyStrToInt1-8   	16509132	        62.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMyStrToInt2-8   	  107935	     10348 ns/op	   10451 B/op	     123 allocs/op
+PASS
+ok  	command-line-arguments	2.347s
