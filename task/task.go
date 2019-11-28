@@ -40,10 +40,7 @@ func (p People) Less(i, j int) bool {
 	if p[i].BirthDay.Equal(p[j].BirthDay) {
 		strI := p[i].FirstName + p[i].LastName
 		strJ := p[j].FirstName + p[j].LastName
-		if strI < strJ {
-			return true
-		}
-		return false
+		return strI < strJ
 	}
         return p[i].BirthDay.After(p[j].BirthDay)
 }
