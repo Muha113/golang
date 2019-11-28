@@ -1,6 +1,7 @@
 package task
 
 import (
+	"math"
 	"strconv"
 	"testing"
 
@@ -28,10 +29,10 @@ func TestMyStrToInt1(t *testing.T) {
 	res, err = MyStrToInt1("")
 	assert.NotEqual(t, []interface{}{res, nil}, []interface{}{res, err})
 	res, err = MyStrToInt1("    +234.0    ")
-	assert.Equal(t, []interface{}{234, nil}, []interface{}{res, err})
-	res, err = MyStrToInt1(strconv.Itoa(maxInt) + "0")
 	assert.NotEqual(t, []interface{}{res, nil}, []interface{}{res, err})
-	res, err = MyStrToInt1(strconv.Itoa(minInt) + "0")
+	res, err = MyStrToInt1(strconv.Itoa(math.MaxInt64) + "0")
+	assert.NotEqual(t, []interface{}{res, nil}, []interface{}{res, err})
+	res, err = MyStrToInt1(strconv.Itoa(math.MinInt64) + "0")
 	assert.NotEqual(t, []interface{}{res, nil}, []interface{}{res, err})
 }
 
@@ -54,10 +55,10 @@ func TestMyStrToInt2(t *testing.T) {
 	res, err = MyStrToInt2("")
 	assert.NotEqual(t, []interface{}{res, nil}, []interface{}{res, err})
 	res, err = MyStrToInt2("    +234.0    ")
-	assert.Equal(t, []interface{}{234, nil}, []interface{}{res, err})
-	res, err = MyStrToInt2(strconv.Itoa(maxInt) + "0")
 	assert.NotEqual(t, []interface{}{res, nil}, []interface{}{res, err})
-	res, err = MyStrToInt2(strconv.Itoa(minInt) + "0")
+	res, err = MyStrToInt2(strconv.Itoa(math.MaxInt64) + "0")
+	assert.NotEqual(t, []interface{}{res, nil}, []interface{}{res, err})
+	res, err = MyStrToInt2(strconv.Itoa(math.MinInt64) + "0")
 	assert.NotEqual(t, []interface{}{res, nil}, []interface{}{res, err})
 }
 
