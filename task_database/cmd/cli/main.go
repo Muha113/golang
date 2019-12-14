@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/Muha113/task_database/pkg/model"
-	"github.com/Muha113/task_database/pkg/mongodb"
-	"github.com/Muha113/task_database/pkg/repository/memory"
+	"github.com/Muha113/golang/task_database/pkg/model"
+	"github.com/Muha113/golang/task_database/pkg/mongodb"
+	"github.com/Muha113/golang/task_database/pkg/repository/memory"
 )
 
 const (
