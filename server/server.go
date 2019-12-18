@@ -19,9 +19,15 @@ func handleMessage(message string) string {
 
 func main() {
 	fmt.Println("Launching server...")
-	ln, _ := net.Listen("tcp", ":8083")
+	ln, err := net.Listen("tcp", ":8083")
+	if err != nil {
+		log.Fatal(err)
+	}
 	defer ln.Close()
-	serv, _ := ln.Accept()
+	serv, err := ln.Accept()
+	if err != nil {
+		log.Fatal(err)
+	}
 	for {
 		message, err := bufio.NewReader(serv).ReadString('\n')
 		if err != nil {
