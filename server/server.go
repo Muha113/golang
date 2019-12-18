@@ -36,6 +36,7 @@ func (s *Server) myHandler(w http.ResponseWriter, r *http.Request) {
 	js, err := json.Marshal(newResponse)
 	if err != nil {
 		log.Fatal(err)
+		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 	}
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)

@@ -1,6 +1,6 @@
 package main
 
-import "github.com/Muha113/simpleServer/server"
+import "github.com/Muha113/golang/server"
 
 func main() {
 	srv := server.NewHTTPServer("", "8083")
